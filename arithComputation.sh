@@ -1,4 +1,5 @@
 #!/bin/bash -x
+declare -A dictionary
 read -p "Emter first number::" number1
 read -p "Enter second number::" number2
 read -p "Enter third number::" number3
@@ -24,3 +25,6 @@ dictionary[4]=$answer4
 echo ${dictionary[@]}
 
 echo ${!dictionary[@]}
+
+
+
