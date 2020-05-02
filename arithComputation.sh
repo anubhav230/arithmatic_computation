@@ -1,4 +1,6 @@
 #!/bin/bash -x
+count=0
+declare A dictionary
 read -p "Emter first number::" number1
 read -p "Enter second number::" number2
 read -p "Enter third number::" number3
@@ -19,8 +21,11 @@ answer4=$(echo "scale=2; $number1 / $number2 + number3"|bc)
 echo "$answer4"
 dictionary[4]=$answer4
 
+array[((count++))]=${dictionary[1]}
+array[((count++))]=${dictionary[2]}
+array[((count++))]=${dictionary[3]}
+array[((count++))]=${dictionary[4]}
+
+echo "array is ${array[@]}"
 
 
-echo ${dictionary[@]}
-
-echo ${!dictionary[@]}
