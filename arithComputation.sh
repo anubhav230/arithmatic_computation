@@ -1,5 +1,6 @@
 #!/bin/bash -x
 count=0
+count2=0
 declare A dictionary
 read -p "Emter first number::" number1
 read -p "Enter second number::" number2
@@ -29,13 +30,13 @@ array[((count++))]=${dictionary[4]}
 echo "array is ${array[@]}"
 
 
-for ((i = 0; i<4; i++))
+for ((i = 0; i<4-1; i++))
 do
 
     for((j = 0; j<4-i-1; j++))
     do
 
-        if [ ${array[$j]} -gt ${array[$((j+1))]} ]
+        if [ ${array[$j]} -lt ${array[$((j+1))]} ]
         then
             # swap
             temp=${array[j]}
@@ -44,7 +45,11 @@ do
         fi
     done
 done
-echo "sorted array is ${array[@]}"
+for ((i=0; i<4; i++))
+do
+	array2[((count2++))]=${array[i]}
+done
+echo "sorted array is ${array2[@]}"
 
 
 
